@@ -5,6 +5,8 @@ module ValidateSpecificValue
     extend ActiveSupport::Concern
 
     class_methods do
+      # def valid_[attribute]? ... end
+      # def self.valid_[attribute]?(value) ... end
       def validates_specific(column)
         column = column.to_sym
         method_name = "valid_#{column}?"
