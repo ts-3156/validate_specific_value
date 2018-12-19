@@ -21,12 +21,13 @@ module ValidateSpecificValue
           end
         end
 
-        define_singleton_method method_name do |value|
+        define_singleton_method method_name do |value, errors = {}|
           instance = self.new
           validators_on(column).each do |validator|
             validator.validate_each(instance, column, value)
           end
-          instance.errors[column].empty?
+          errors[column] = instance.errors[column]
+          errors[column].empty?
         end
       end
     end
