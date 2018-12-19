@@ -1,6 +1,6 @@
 require_relative "test_helper"
 
-class StrEnumTest < Minitest::Test
+class ValidateSpecificValueTest < Minitest::Test
   def setup
     User.delete_all
   end
