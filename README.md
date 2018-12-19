@@ -1,39 +1,59 @@
-# ValidateSpecificValue
+# validate_specific_value
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/validate_specific_value`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a way to validate single attribute in Rails. :tada:
 
-TODO: Delete this and the text above, and describe your gem
+- accessor methods
 
-## Installation
+## Getting Started
 
-Add this line to your application's Gemfile:
+Add this line to your application’s Gemfile:
 
 ```ruby
 gem 'validate_specific_value'
 ```
 
-And then execute:
+Add a validation rule to your model.
 
-    $ bundle
+```ruby
+validates :name, uniqueness: true
+```
 
-Or install it yourself as:
+And use:
 
-    $ gem install validate_specific_value
+```ruby
+class User < ApplicationRecord
+  validates_specific :name
+end
+```
 
-## Usage
+The first value will be the initial value. This gives you:
 
-TODO: Write usage instructions here
+#### Accessor Methods
 
-## Development
+Instance context:
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```ruby
+user = User.new(name: 'duplicate_name')
+user.valid_name?
+# => false
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+user.errors[:name]
+# => 
+
+```
+
+Class context:
+
+```ruby
+User.valid_name?('duplicate_name')
+# => false
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/validate_specific_value.
+Everyone is encouraged to help improve this project. Here are a few ways you can help:
 
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+- [Report bugs](https://github.com/ts-3156/validate_specific_value/issues)
+- Fix bugs and [submit pull requests](https://github.com/ts-3156/validate_specific_value/pulls)
+- Write, clarify, or fix documentation
+- Suggest or add new features
