@@ -38,7 +38,7 @@ user.valid_name?
 # => false
 
 user.errors[:name]
-# => 
+# => ["has already been taken"]
 
 ```
 
