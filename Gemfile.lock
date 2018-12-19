@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    validate_specific_value (0.1.1)
+    validate_specific_value (0.2.0)
       activesupport
 
 GEM
