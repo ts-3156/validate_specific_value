@@ -4,8 +4,6 @@ This is a way to validate single attribute in Rails. :tada:
 
 Sometimes there are validations that are quite expensive (e.g. validations that need to perform database queries). In that case you need to avoid using valid? because it simply does a lot more than you need. [link](https://stackoverflow.com/questions/4804591/rails-activerecord-validate-single-attribute)
 
-- accessor methods
-
 ## Getting Started
 
 Add this line to your application’s Gemfile:
