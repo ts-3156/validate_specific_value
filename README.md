@@ -26,8 +26,6 @@ class User < ApplicationRecord
 end
 ```
 
-The first value will be the initial value. This gives you:
-
 #### Accessor Methods
 
 Instance context:
