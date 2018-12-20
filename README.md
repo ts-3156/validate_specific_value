@@ -1,6 +1,7 @@
 # validate_specific_value
 
 [![Build Status](https://travis-ci.org/ts-3156/validate_specific_value.svg?branch=master)](https://travis-ci.org/ts-3156/validate_specific_value)
+[![Gem Version](https://badge.fury.io/rb/validate_specific_value.svg)](https://badge.fury.io/rb/validate_specific_value)
 
 This is a way to validate single attribute in Rails. :tada:
 
