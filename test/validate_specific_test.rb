@@ -5,13 +5,17 @@ class ValidateSpecificValueTest < Minitest::Test
     User.delete_all
   end
 
-  def test_accessor_methods
+  def test_instance_methods
     user = User.create!(name: 'name')
 
     assert User.new(name: 'name2').valid_name?
-    assert User.valid_name?('name2')
-
     assert !User.new(name: 'name').valid_name?
+  end
+
+  def test_class_methods
+    user = User.create!(name: 'name')
+
+    assert User.valid_name?('name2')
     assert !User.valid_name?('name')
   end
 
