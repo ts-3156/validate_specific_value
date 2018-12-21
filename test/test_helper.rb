@@ -10,7 +10,7 @@ Minitest::Test = Minitest::Unit::TestCase unless defined?(Minitest::Test)
 ActiveRecord::Base.logger = Logger.new(STDOUT) if ENV["DEBUG"]
 
 # migrations
-ActiveRecord::Base.establish_connection adapter: "sqlite3", database: ":memory:"
+ActiveRecord::Base.establish_connection(YAML.load_file("test/database.#{ENV['DB']}.yml")["test"])
 
 ActiveRecord::Migration.create_table :users do |t|
   t.string :name
