@@ -1,0 +1,7 @@
+test:
+  adapter: postgresql
+  database: validate_specific_value_test
+  username: postgres
+  password:
+  host: localhost
+  port: 5432
