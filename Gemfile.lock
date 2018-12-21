@@ -33,7 +33,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
   bundler
   minitest
   rake
